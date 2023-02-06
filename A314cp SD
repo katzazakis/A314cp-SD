@@ -5,7 +5,8 @@ sudo raspi-config
 ...
 # install docker if needed
 sudo apt-get update && sudo apt-get upgrade
-sudo apt install docker
+curl -fsSL https://get.Docker.com -o get-Docker.sh && chmod +x get-Docker.sh
+sudo ./get-Docker.sh
 sudo usermod -aG docker pi
 # docker already installed? - test docker functionality
 cat /etc/group | grep docker
