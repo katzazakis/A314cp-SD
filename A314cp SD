@@ -25,7 +25,6 @@ sudo systemctl start a314d
 ...
 # install and build amiga binaries
 git clone -b clockport_if https://github.com/niklasekstrom/a314.git
-sudo usermod -aG docker pi
 cd a314/Software
 ./rpi_docker_build.sh
 ...
