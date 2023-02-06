@@ -7,7 +7,7 @@ https://github.com/Eriond/clockport_pi_interface
 
 get the amiga binaries from here:
 
-https://github.com/niklasekstrom/clockport_pi_interface/releases/download/v1.1/amiga_binaries.zip
+https://github.com/niklasekstrom/clockport_pi_interface/releases/
 
 
 Connect to your A314 over ftp, play mp3 sound on your Amiga with PiAudio or connect your Amiga to Spotify.
