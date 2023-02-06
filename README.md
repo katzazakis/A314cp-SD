@@ -16,4 +16,5 @@ Heavily based on CrowStudio's excellent A314 setup guide.
 
 # A314cp Image
 a ready built SD Image for the A314cp
-based on Bullseye 11 Desktop version v5.15.84-v7+ 64Bit, including all you will need
+based on Bullseye 11 Desktop version v5.15.84-v7+ 64Bit
+optimized for pistorm32 lite
