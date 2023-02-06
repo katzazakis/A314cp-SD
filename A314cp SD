@@ -1,0 +1,137 @@
+Install your favorite RasperryPi OS on your SD. I prefer the 32Bit Desktop version
+
+# set your country, language, SSID and WIFI-country .Enabble SSH (and VNC, if you like)
+sudo raspi-config
+...
+# test docker functionality
+cat /etc/group | grep docker
+newgrp docker
+docker run hello-world
+...
+# install docker if needed
+sudo apt-get update && sudo apt-get upgrade
+curl -fsSL https://get.Docker.com -o get-Docker.sh && chmod +x get-Docker.sh
+sudo ./get-Docker.sh
+sudo usermod -aG docker pi
+...
+# install a314cp software and start a314 task
+sudo apt install python3-dev python3-distutils python3-pip build-essential git
+git clone -b clockport_if https://github.com/niklasekstrom/a314.git
+cd a314/Software
+make
+sudo make install
+sudo systemctl daemon-reload
+sudo systemctl enable a314d
+sudo systemctl start a314d
+...
+# install and build amiga binaries
+git clone -b clockport_if https://github.com/niklasekstrom/a314.git
+sudo usermod -aG docker pi
+cd a314/Software
+./rpi_docker_build.sh
+...
+# install sound driver for Amiga
+mkdir /home/pi/Music
+sudo nano /etc/alsa/conf.d/asound.conf
+# add this to the empty file:
+        pcm.!amiga {
+            type plug
+            slave {
+                pcm pipe
+                format s8
+                rate 18000
+                channels 2
+            }
+            hint {
+                description "Play audio to Amiga using A314"
+            }
+        }
+        pcm.pipe {
+            type file
+            format raw
+            file "/tmp/piaudio_pipe"
+            slave.pcm null
+        }
+# save and exit by pressing <ctrl+x>, then press <y>, and hit <enter>.
+# create a empty .asoundrc to prevent asound.conf to be overwritten by other instances:
+touch /home/pi/.asoundrc
+sudo chmod a-w /home/pi/.asoundrc
+# install mpg123 for mp3 playback:
+sudo apt update
+sudo apt install mpg123
+# to make it easier to “play all” with mpg123, you have to create an executable bash file.
+sudo su
+# copy and paste all text below, and hit <enter>:
+echo '#\!/bin/sh' > /usr/local/bin/playmusic
+echo 'mpg123 -a amiga ./Music/*.mp3' >> /usr/local/bin/playmusic
+# make file executable for all users:
+chmod a+x /usr/local/bin/playmusic
+# press <ctrl+d> to exit su (super user) promt.
+...
+# install raspotify
+curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
+sudo apt install sox libsox-fmt-all
+sudo apt install libasound2-plugins libasound2
+sudo su
+echo '#\!/bin/sh' > /usr/local/bin/Spotify
+echo 'librespot librespot --name raspotify --device-type computer --initial-volume 98 --backend pipe | \sox -t raw -b 16 -e signed -c 2 -r 44.1k - \-b 16 -e signed -c 2 -r 44.1k -t alsa amiga' >> /usr/local/bin/Spotify
+chmod a+x /usr/local/bin/Spotify
+# press <ctrl+d> to exit su promt.
+...
+# setting up Pure-FTPd – for easy file transfers to the Raspberry Pi.
+sudo apt update
+sudo apt install pure-ftpd
+# create a new user group:
+sudo groupadd ftpgroup
+# create a new user that has NO login privilege and NO home directory:
+sudo useradd ftpuser -g ftpgroup -s /sbin/nologin -d /dev/null
+# set ownership for the folder a314shared/ and Music/:
+sudo chown pi:ftpgroup /home/pi/a314shared/
+sudo chown pi:ftpgroup /home/pi/Music/
+# create file Umask, and setup permissions for files and folders:
+sudo nano /etc/pure-ftpd/conf/Umask
+# set permissions for folder:file to 666:774, by adding the following line to the empty file
+111 003
+# save and exit by pressing <ctrl+x>, then press <y>, and hit <enter>
+# add user pi to group ftpgroup, and make folder writable for ftpgroup:
+sudo usermod -a -G ftpgroup pi
+sudo chmod g+w /home/pi/a314shared/
+sudo chmod g+w /home/pi/Music/
+# create a pure-ftp user – replace <user> with a name of your choice – and map it to ftpuser, ftpgroup, and setup home directory
+sudo pure-pw useradd <user> -u ftpuser -g ftpgroup -d /home/pi/ -m
+# create data base:
+sudo pure-pw mkdb
+# define the authentication method
+sudo ln -s /etc/pure-ftpd/conf/PureDB /etc/pure-ftpd/auth/60puredb
+# restart Pure FTPd with new settings:
+sudo service pure-ftpd restart
+...
+# install FPGALoader
+git clone https://github.com/trabucayre/openFPGALoader.git
+cd openFPGALoader/
+mkdir build
+cd build/
+sudo apt install \
+  libftdi1-2 \
+  libftdi1-dev \
+  libhidapi-hidraw0 \
+  libhidapi-dev \
+  libudev-dev \
+  zlib1g-dev \
+  cmake \
+  pkg-config \
+  make \
+  g++ \
+  libgpiod-dev
+cmake ..
+make
+./openFPGALoader -c libgpiod --pins 10:8:11:9 --detect
+...
+# flash A314cp with openFPGALoader
+cd /home/pi/openFPGALoader/build
+./openFPGALoader -c libgpiod --pins 10:8:11:9 -f cp_pi_if-10.jed
+# (cp_pi_if-10.jed has to be in ./openFPGALoader/build)
+...
+# install Pi-Apps
+wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+... 
