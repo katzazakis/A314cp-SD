@@ -3,16 +3,14 @@ Install your favorite RasperryPi OS on your SD. I prefer the 32Bit Desktop versi
 # set your country, language, SSID and WIFI-country .Enabble SSH (and VNC, if you like)
 sudo raspi-config
 ...
+# install docker if needed
+sudo apt-get update && sudo apt-get upgrade
+sudo apt install docker
+sudo usermod -aG docker pi
 # docker already installed? - test docker functionality
 cat /etc/group | grep docker
 newgrp docker
 docker run hello-world
-...
-# install docker if needed
-sudo apt-get update && sudo apt-get upgrade
-curl -fsSL https://get.Docker.com -o get-Docker.sh && chmod +x get-Docker.sh
-sudo ./get-Docker.sh
-sudo usermod -aG docker pi
 ...
 # install a314cp software and start a314 task
 sudo apt install python3-dev python3-distutils python3-pip build-essential git
