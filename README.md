@@ -5,6 +5,8 @@ https://github.com/niklasekstrom/a314/tree/clockport_if
 
 https://github.com/Eriond/clockport_pi_interface
 
+get the amiga binaries from here:
+
 https://github.com/niklasekstrom/clockport_pi_interface/releases/download/v1.1/amiga_binaries.zip
 
 
