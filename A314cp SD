@@ -3,7 +3,7 @@ Install your favorite RasperryPi OS on your SD. I prefer the 32Bit Desktop versi
 # set your country, language, SSID and WIFI-country .Enabble SSH (and VNC, if you like)
 sudo raspi-config
 ...
-# test docker functionality
+# docker already installed? - test docker functionality
 cat /etc/group | grep docker
 newgrp docker
 docker run hello-world
