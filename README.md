@@ -9,7 +9,7 @@ https://github.com/niklasekstrom/a314/tree/clockport_if
 
 https://github.com/Eriond/clockport_pi_interface
 
-Get the amiga binaries for A314 from here:
+Get the amiga binaries for A314cp from here:
 
 https://github.com/niklasekstrom/clockport_pi_interface/releases/
 
