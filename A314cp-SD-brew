@@ -1,4 +1,4 @@
-Install your favorite RasperryPi OS on your SD. I prefer the 32Bit Desktop version
+Install your favorite RasperryPi OS on your SD. I prefer the 64Bit Desktop version
 
 # set your country, language, SSID and WIFI-country .Enabble SSH (and VNC, if you like)
 sudo raspi-config
