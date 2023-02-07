@@ -13,8 +13,3 @@ https://github.com/niklasekstrom/clockport_pi_interface/releases/
 Connect to your A314 over ftp, play mp3 sound on your Amiga with PiAudio or connect your Amiga to Spotify.
 
 Heavily based on CrowStudio's excellent A314 setup guide.
-
-# A314cp Image
-a ready built SD Image for the A314cp
-based on Bullseye 11 Desktop version v5.15.84-v7+ 64Bit
-optimized for pistorm32 lite
