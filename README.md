@@ -1,5 +1,5 @@
 # a314cp-SD-brew
-a small guide how to create a SD for the A314cp with some goodies.
+a small guide how to create your SD for the A314cp with some goodies.
 
 https://github.com/niklasekstrom/a314/tree/clockport_if
 
