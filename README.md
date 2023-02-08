@@ -15,5 +15,9 @@ Get the amiga binaries for A314cp from here:
 
 https://github.com/niklasekstrom/clockport_pi_interface/releases/tag/v1.1
 
+Get the Firmware from here:
+
+https://github.com/Eriond/clockport_pi_interface/tree/main/HDL
+
 
 
