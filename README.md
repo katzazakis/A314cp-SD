@@ -9,6 +9,8 @@ Heavily based on CrowStudio's excellent A314 setup guide. https://crowstudio.se
 
 https://github.com/niklasekstrom/a314/tree/clockport_if
 
+https://github.com/niklasekstrom/clockport_pi_interface
+
 https://github.com/Eriond/clockport_pi_interface
 
 Get the amiga binaries for A314cp from here:
