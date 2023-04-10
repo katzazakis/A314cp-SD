@@ -21,3 +21,5 @@ https://github.com/Eriond/clockport_pi_interface/tree/main/HDL
 
 
 
+# I will not share premade SD Images anymore, Sorry.
+Be careful what you do and never use scripts from suspect sources!
