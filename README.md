@@ -18,8 +18,7 @@ https://github.com/niklasekstrom/clockport_pi_interface/releases/tag/v1.1
 Get the Firmware from here:
 
 https://github.com/Eriond/clockport_pi_interface/tree/main/HDL
+#
+**I will not share premade SD Images at the moment, Sorry.**
 
-
-
-# I will not share premade SD Images at the moment, Sorry.
 Be careful what you do and never use install scripts from unknown sources!
