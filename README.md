@@ -22,4 +22,4 @@ https://github.com/Eriond/clockport_pi_interface/tree/main/HDL
 **a very basic premade SD Image can be found here:**
 https://archive.org/details/a-314cp-zero-1-clean
 
-Be careful what you do and never use install scripts from unknown sources!
+Be careful what you are doing, never use install scripts from unknown sources!
