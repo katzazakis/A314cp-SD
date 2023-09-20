@@ -7,7 +7,7 @@ Connect to your A314 over ftp, play mp3 sound on your Amiga with PiAudio or conn
 
 Heavily based on CrowStudio's excellent A314 setup guide. https://crowstudio.se
 
-All information about this great project can be found here:
+**All information about this great project can be found here:**
 
 https://github.com/niklasekstrom/clockport_pi_interface
 
