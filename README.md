@@ -17,9 +17,11 @@ https://github.com/Eriond/clockport_pi_interface
 
 https://github.com/niklasekstrom/clockport_pi_interface/releases/tag/v1.1
 
-**Get the Firmware from here:**
+**Get the Firmware, depending on your board version from here:**
 
 https://github.com/Eriond/clockport_pi_interface/tree/main/HDL
+
+https://github.com/niklasekstrom/clockport_pi_interface/releases/download/v1.1/cp_pi_if.jed
 #
 **a very basic premade SD Image can be found here:**
 https://archive.org/details/a-314cp-zero-1-clean
