@@ -5,7 +5,7 @@ https://github.com/katzazakis/a314cp-SD/wiki
 
 Connect to your A314 over ftp, play mp3 sound on your Amiga with PiAudio or connect your Amiga to Spotify.
 
-Heavily based on CrowStudio's excellent A314 setup guide. https://crowstudio.se
+Based on Nikla's and Eriond's guide and CrowStudio's excellent A314 setup guide. https://crowstudio.se
 
 **All information about this great project can be found here:**
 
