@@ -1,5 +1,5 @@
 # a314cp-SD-brew
-A small Wiki guide how to create a SD for the A314cp with some goodies.
+**A small Wiki guide how to create a SD for the A314cp with some goodies.**
 
 https://github.com/katzazakis/a314cp-SD/wiki
 
