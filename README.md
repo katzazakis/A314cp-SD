@@ -22,8 +22,4 @@ https://github.com/niklasekstrom/a314/releases
 https://github.com/Eriond/clockport_pi_interface/tree/main/HDL
 
 https://github.com/niklasekstrom/clockport_pi_interface/releases/download/v1.1/cp_pi_if.jed
-#
-**a very basic premade SD Image can be found here:**
-https://archive.org/details/a-314cp-zero-1-clean
 
-Be careful what you are doing, never use install scripts from unknown sources!
