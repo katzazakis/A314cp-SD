@@ -15,7 +15,7 @@ https://github.com/Eriond/clockport_pi_interface
 
 **Get the amiga binaries for A314cp from here:**
 
-https://github.com/niklasekstrom/clockport_pi_interface/releases/tag/v1.1
+https://github.com/niklasekstrom/a314/releases
 
 **Get the Firmware, depending on your board version from here:**
 
